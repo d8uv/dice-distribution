@@ -21,8 +21,16 @@ const InputRow = props => (
   </p>
 );
 
+const LevelRow = props => (
+  <li>
+    <span className="col lhs">{props.lhs}</span>{" "}
+    <span className="col eq">=</span>{" "}
+    <span className="col rhs">{props.rhs}</span>
+  </li>
+);
+
 const Calculator = props => (
-  <div>
+  <div id="calculator">
     <InputRow label="A">
       <NumberInput value={props.A} handleChange={props.changeA} min={1} />
     </InputRow>
@@ -39,17 +47,17 @@ const Calculator = props => (
       <NumberInput value={props.B} handleChange={props.changeB} min={0} />
     </InputRow>
     <hr />
-    <p>
+    <p className="formula">
       {props.A}d{props.X} + {props.B}
     </p>
-    <ul>
-      <li>⌊μ-2σ⌋ = {props.levels[0]}</li>
-      <li>⌊μ-σ⌋ = {props.levels[1]}</li>
-      <li>⌊μ⌋ = {props.levels[2]}</li>
-      <li>⌊μ+σ⌋ = {props.levels[3]}</li>
-      <li>⌊μ+2σ⌋ = {props.levels[4]}</li>
+    <ul className="levels">
+      <LevelRow lhs="⌊μ-2σ⌋" rhs={props.levels[0]} />
+      <LevelRow lhs="⌊μ-σ⌋" rhs={props.levels[1]} />
+      <LevelRow lhs="⌊μ⌋" rhs={props.levels[2]} />
+      <LevelRow lhs="⌊μ+σ⌋" rhs={props.levels[3]} />
+      <LevelRow lhs="⌊μ+2σ⌋" rhs={props.levels[4]} />
     </ul>
-    <ul>
+    <ul className="nerd-stats">
       <li>μ = {props.mean}</li>
       <li>σ ≈ {props.stddev.toFixed(6)}</li>
     </ul>
