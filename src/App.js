@@ -3,15 +3,42 @@ import "./App.css";
 
 const getDiceLevel = (mean, stddev, level) => Math.floor(mean + stddev * level);
 
-const NumberInput = props => (
-  <input
-    type="number"
-    value={props.value}
-    onChange={props.handleChange}
-    step="1"
-    min={props.min}
-  />
-);
+class NumberInput extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = { value: "" + this.props.value };
+  }
+  componentWillReceiveProps(nextprops) {
+    this.setState({ value: "" + nextprops.value });
+  }
+  handleChange = event => {
+    const value = event.target.value;
+    this.setState({ value: value });
+    if (value !== "") {
+      this.props.handleChange(event);
+    }
+  };
+  handleBlur = event => {
+    const value = event.target.value;
+    if (value === "") {
+      this.setState({ value: this.props.min });
+    } else {
+      this.setState({ value: "" + Math.round(value) });
+    }
+  };
+  render() {
+    return (
+      <input
+        type="number"
+        value={this.state.value}
+        onChange={this.handleChange}
+        onBlur={this.handleBlur}
+        step="1"
+        min={this.props.min}
+      />
+    );
+  }
+}
 
 const InputRow = props => (
   <p>
