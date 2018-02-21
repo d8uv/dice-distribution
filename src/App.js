@@ -21,9 +21,9 @@ class NumberInput extends PureComponent {
   handleBlur = event => {
     const value = event.target.value;
     if (value === "") {
-      this.setState({ value: this.props.min });
+      this.handleChange({ target: { value: this.props.min } });
     } else {
-      this.setState({ value: "" + Math.round(value) });
+      this.handleChange({ target: { value: Math.round(value) } });
     }
   };
   render() {
@@ -49,7 +49,7 @@ const InputRow = props => (
 );
 
 const LevelRow = props => (
-  <li>
+  <li className={props.className}>
     <span className="col lhs">{props.lhs}</span>{" "}
     <span className="col eq">=</span>{" "}
     <span className="col rhs">{props.rhs}</span>
@@ -78,11 +78,11 @@ const Calculator = props => (
       {props.A}d{props.X} + {props.B}
     </p>
     <ul className="levels">
-      <LevelRow lhs="⌊μ-2σ⌋" rhs={props.levels[0]} />
-      <LevelRow lhs="⌊μ-σ⌋" rhs={props.levels[1]} />
-      <LevelRow lhs="⌊μ⌋" rhs={props.levels[2]} />
-      <LevelRow lhs="⌊μ+σ⌋" rhs={props.levels[3]} />
-      <LevelRow lhs="⌊μ+2σ⌋" rhs={props.levels[4]} />
+      <LevelRow lhs="⌊μ−2σ⌋" rhs={props.levels[0]} className="sigma-2" />
+      <LevelRow lhs="⌊μ−σ⌋" rhs={props.levels[1]} className="sigma-1" />
+      <LevelRow lhs="⌊μ⌋" rhs={props.levels[2]} className="sigma-0" />
+      <LevelRow lhs="⌊μ+σ⌋" rhs={props.levels[3]} className="sigma-1" />
+      <LevelRow lhs="⌊μ+2σ⌋" rhs={props.levels[4]} className="sigma-2" />
     </ul>
     <ul className="nerd-stats">
       <li>μ = {props.mean}</li>
