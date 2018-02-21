@@ -58,6 +58,7 @@ const LevelRow = props => (
 
 const Calculator = props => (
   <div id="calculator">
+  <form>
     <InputRow label="A">
       <NumberInput value={props.A} handleChange={props.changeA} min={1} />
     </InputRow>
@@ -73,6 +74,7 @@ const Calculator = props => (
     <InputRow label="B">
       <NumberInput value={props.B} handleChange={props.changeB} min={0} />
     </InputRow>
+    </form>
     <hr />
     <p className="formula">
       {props.A}d{props.X} + {props.B}

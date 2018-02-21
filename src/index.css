@@ -1,5 +1,82 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "EB Garamond", "Palatino Linotype", Palatino, Palladio,
+    "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style",
+    "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond",
+    "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook",
+    "Century Schoolbook L", Georgia, serif;
+}
+
+#calculator {
+  font-size: 36px;
+  line-height: 1.25;
+  margin: 1em;
+  border: 2px solid #ccc;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.25em #ccc;
+  overflow: hidden;
+}
+#calculator form {
+  font-size: 0.5em;
+  line-height: 1;
+  padding: 0.5em;
+  background: #eee;
+}
+
+#calculator form input,
+#calculator form select {
+  font: 1em "EB Garamond", "Palatino Linotype", Palatino, Palladio,
+    "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style",
+    "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond",
+    "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook",
+    "Century Schoolbook L", Georgia, serif;
+  padding: 0.125em 0 0.125em 0.5em;
+  width: 4em;
+  box-sizing: border-box;
+  line-height: 1;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0.25em;
+}
+#calculator hr {
+  margin: 0;
+  border: 0;
+  border-top: 2px solid #ccc;
+}
+#calculator p.formula {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+#calculator ul.levels {
+  display: table;
+  margin: 0.5em auto;
+  padding: 0;
+}
+#calculator ul.levels li {
+  display: table-row;
+}
+#calculator ul.levels li .col {
+  display: table-cell;
+}
+#calculator ul.levels li .col.eq {
+  padding: 0 0.25em;
+}
+#calculator ul.levels li .col.lhs {
+  text-align: right;
+}
+#calculator ul.levels li .col.rhs {
+  text-align: left;
+  font-weight: bold;
+}
+#calculator ul.levels li.sigma-1 {
+  opacity: 0.617;
+}
+#calculator ul.levels li.sigma-2 {
+  opacity: 0.134;
+}
+#calculator ul.nerd-stats {
+  padding: 0;
+  font-size: 0.5em;
+  opacity: 0.134;
 }
