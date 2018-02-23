@@ -1,4 +1,5 @@
 import React, { PureComponent, Fragment } from "react";
+import { toWords } from "number-to-words";
 
 class NumberInput extends PureComponent {
   constructor(props) {
@@ -126,7 +127,8 @@ const Calculator = props => {
     case 2:
       summary = (
         <p className="calculator-summary">
-          When you roll {props.A} {props.X}-sided die, the result will{" "}
+          When you roll {toWords(props.A)} {toWords(props.X)}-sided die, the
+          result will{" "}
           <span className="tooltip" title="50%">
             likely
           </span>{" "}
@@ -138,7 +140,8 @@ const Calculator = props => {
     default:
       summary = (
         <p className="calculator-summary">
-          When you roll {props.A} {props.X}-sided die, the result will{" "}
+          When you roll {toWords(props.A)} {toWords(props.X).replace(" ", "-")}-sided
+          die, the result will{" "}
           <span className="tooltip" title="68%">
             likely
           </span>{" "}

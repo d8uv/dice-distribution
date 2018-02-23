@@ -94,3 +94,14 @@ p.calculator-summary {
   line-height: 2.25rem;
   margin: 2.25rem 0;
 }
+p.calculator-summary .tooltip {
+  font-style: italic;
+  border-bottom: 1px solid #ccc;
+  display: inline-block;
+  line-height: 0.9;
+  text-shadow:
+    2px 2px white,
+    2px -2px white,
+    -2px 2px white,
+    -2px -2px white;
+}
