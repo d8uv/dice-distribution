@@ -55,6 +55,26 @@ const LevelRow = props => (
 );
 
 const Calculator = props => {
+  const form = (
+    <form>
+      <InputRow label="A">
+        <NumberInput value={props.A} handleChange={props.changeA} min={1} />
+      </InputRow>
+      <InputRow label="X">
+        <select value={props.X} onChange={props.changeX}>
+          {[2, 3, 4, 6, 8, 10, 12, 20, 100].map(X => (
+            <option key={X} value={X}>
+              d{X}
+            </option>
+          ))}
+        </select>
+      </InputRow>
+      <InputRow label="B">
+        <NumberInput value={props.B} handleChange={props.changeB} min={0} />
+      </InputRow>
+    </form>
+  );
+
   var levels;
   switch (props.A) {
     case 1:
@@ -120,6 +140,7 @@ const Calculator = props => {
         </Fragment>
       );
   }
+
   var summary;
   switch (props.A) {
     case 1:
@@ -158,23 +179,7 @@ const Calculator = props => {
   return (
     <Fragment>
       <div id="calculator">
-        <form>
-          <InputRow label="A">
-            <NumberInput value={props.A} handleChange={props.changeA} min={1} />
-          </InputRow>
-          <InputRow label="X">
-            <select value={props.X} onChange={props.changeX}>
-              {[2, 3, 4, 6, 8, 10, 12, 20, 100].map(X => (
-                <option key={X} value={X}>
-                  d{X}
-                </option>
-              ))}
-            </select>
-          </InputRow>
-          <InputRow label="B">
-            <NumberInput value={props.B} handleChange={props.changeB} min={0} />
-          </InputRow>
-        </form>
+        {form}
         <hr />
         <p className="formula">
           {props.A}d{props.X} + {props.B}
