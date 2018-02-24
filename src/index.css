@@ -28,6 +28,12 @@ h1 svg {
   width: 1em;
   height: auto;
 }
+h1 svg.u1f660 {
+  margin-right: 0.333333em;
+}
+h1 svg.u1f662 {
+  margin-left: 0.333333em;
+}
 
 #calculator {
   font-size: 2.25rem;
