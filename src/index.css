@@ -113,7 +113,7 @@ h1 svg.u1f662 {
 p.calculator-summary {
   font-size: 1.6875rem;
   line-height: 2.25rem;
-  margin: 2.25rem 0;
+  margin: 2.25rem 0 3.375rem;
 }
 p.calculator-summary .tooltip {
   font-style: italic;
@@ -121,4 +121,22 @@ p.calculator-summary .tooltip {
   display: inline-block;
   line-height: 0.9;
   text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
+}
+
+#essay {
+  text-align: left;
+  margin: 2.25rem 0;
+}
+#essay h2 {
+  font-size: 1.6875rem;
+  line-height: 2.25rem;
+  margin: 2.25rem 0 1.125rem;
+}
+#essay p {
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  margin: 0.5625rem 0;
+}
+#essay a {
+  color: #0095C6
 }

@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import Header from "./Header";
 import Calculator from "./Calculator";
+import Essay from "./Essay";
 import "./App.css";
 
 const getDiceLevel = (mean, stddev, level) => Math.floor(mean + stddev * level);
@@ -34,13 +35,14 @@ class App extends PureComponent {
           A={A}
           X={X}
           B={B}
-          changeA={this.changeA}
-          changeX={this.changeX}
-          changeB={this.changeB}
           mean={mean}
           stddev={stddev}
           levels={levels}
+          changeA={this.changeA}
+          changeX={this.changeX}
+          changeB={this.changeB}
         />
+        <Essay A={A} X={X} B={B} mean={mean} stddev={stddev} levels={levels} />
       </div>
     );
   }
