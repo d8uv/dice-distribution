@@ -148,8 +148,8 @@ const Calculator = props => {
     case 2:
       summary = (
         <p className="calculator-summary">
-          When you roll {toWords(props.A)} {toWords(props.X)}-sided die, the
-          result will{" "}
+          When you roll {toWords(props.A)} {toWords(props.X).replace(" ", "-")}-sided
+          die, the result will{" "}
           <span className="tooltip" title="50%">
             likely
           </span>{" "}

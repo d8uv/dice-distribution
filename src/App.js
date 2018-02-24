@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import Header from "./Header";
 import Calculator from "./Calculator";
 import "./App.css";
 
@@ -28,7 +29,7 @@ class App extends PureComponent {
 
     return (
       <div className="App">
-        <h1>Dice to Distribution</h1>
+        <Header />
         <Calculator
           A={A}
           X={X}
