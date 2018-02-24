@@ -19,7 +19,7 @@ class NumberInput extends PureComponent {
   handleBlur = event => {
     const value = event.target.value;
     if (value === "") {
-      this.handleChange({ target: { value: this.props.min } });
+      this.handleChange({ target: { value: this.props.min || 0 } });
     } else {
       this.handleChange({ target: { value: Math.round(value) } });
     }
@@ -70,10 +70,25 @@ const Calculator = props => {
         </select>
       </InputRow>
       <InputRow label="B">
-        <NumberInput value={props.B} handleChange={props.changeB} min={0} />
+        <NumberInput value={props.B} handleChange={props.changeB} />
       </InputRow>
     </form>
   );
+
+  var formula;
+  if (props.B < 0) {
+    formula = (
+      <p className="formula">
+        {props.A}d{props.X} − {Math.abs(props.B)}
+      </p>
+    );
+  } else {
+    formula = (
+      <p className="formula">
+        {props.A}d{props.X} + {props.B}
+      </p>
+    );
+  }
 
   var levels;
   switch (props.A) {
@@ -141,6 +156,14 @@ const Calculator = props => {
       );
   }
 
+  var summaryAndAddClause;
+  if (props.B > 0) {
+    summaryAndAddClause = " and add " + toWords(props.B);
+  }
+  if (props.B < 0) {
+    summaryAndAddClause = " and subtract " + toWords(Math.abs(props.B));
+  }
+
   var summary;
   switch (props.A) {
     case 1:
@@ -149,7 +172,7 @@ const Calculator = props => {
       summary = (
         <p className="calculator-summary">
           When you roll {toWords(props.A)} {toWords(props.X).replace(" ", "-")}-sided
-          die, the result will{" "}
+          die{summaryAndAddClause}, the result will{" "}
           <span className="tooltip" title="50%">
             likely
           </span>{" "}
@@ -162,7 +185,7 @@ const Calculator = props => {
       summary = (
         <p className="calculator-summary">
           When you roll {toWords(props.A)} {toWords(props.X).replace(" ", "-")}-sided
-          die, the result will{" "}
+          die{summaryAndAddClause}, the result will{" "}
           <span className="tooltip" title="68%">
             likely
           </span>{" "}
@@ -181,9 +204,7 @@ const Calculator = props => {
       <div id="calculator">
         {form}
         <hr />
-        <p className="formula">
-          {props.A}d{props.X} + {props.B}
-        </p>
+        {formula}
         {levels}
       </div>
       {summary}
