@@ -37,15 +37,6 @@ class NumberInput extends PureComponent {
     );
   }
 }
-
-const InputRow = props => (
-  <p>
-    <label>
-      {props.label}: {props.children}
-    </label>
-  </p>
-);
-
 const LevelRow = props => (
   <li className={props.className}>
     <span className="col lhs">{props.lhs}</span>{" "}
@@ -56,23 +47,50 @@ const LevelRow = props => (
 
 const Calculator = props => {
   const form = (
-    <form>
-      <InputRow label="A">
-        <NumberInput value={props.A} handleChange={props.changeA} min={1} />
-      </InputRow>
-      <InputRow label="X">
-        <select value={props.X} onChange={props.changeX}>
-          {[2, 3, 4, 6, 8, 10, 12, 20, 100].map(X => (
-            <option key={X} value={X}>
-              d{X}
-            </option>
-          ))}
-        </select>
-      </InputRow>
-      <InputRow label="B">
-        <NumberInput value={props.B} handleChange={props.changeB} />
-      </InputRow>
-    </form>
+    <div className="form-container">
+      <form>
+        <p>
+          <label>
+            <span className="label col">
+              number of dice (<i>A</i>):
+            </span>
+            <span className="input col">
+              <NumberInput
+                value={props.A}
+                handleChange={props.changeA}
+                min={1}
+              />
+            </span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <span className="label col">
+              number of sides on each die (<i>X</i>):
+            </span>
+            <span className="input col">
+              <select value={props.X} onChange={props.changeX}>
+                {[2, 3, 4, 6, 8, 10, 12, 20, 100].map(X => (
+                  <option key={X} value={X}>
+                    d{X}
+                  </option>
+                ))}
+              </select>
+            </span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <span className="label col">
+              number to add to the roll (<i>B</i>):
+            </span>
+            <span className="input col">
+              <NumberInput value={props.B} handleChange={props.changeB} />
+            </span>
+          </label>
+        </p>
+      </form>
+    </div>
   );
 
   var formula;
