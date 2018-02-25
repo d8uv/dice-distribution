@@ -173,7 +173,7 @@ const Calculator = props => {
         <p className="calculator-summary">
           When you roll {toWords(props.A)} {toWords(props.X).replace(" ", "-")}-sided
           die{summaryAndAddClause}, the result will{" "}
-          <span className="tooltip" title="50%">
+          <span className="tooltip" title="68%">
             likely
           </span>{" "}
           be between {props.levels[1]} and {props.levels[3]} (usually around{" "}

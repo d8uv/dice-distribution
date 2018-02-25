@@ -21,9 +21,6 @@ class App extends PureComponent {
     const B = this.state.B;
     const mean = A * (1 + X) / 2 + B;
     var stddev = Math.sqrt(A * (Math.pow(X, 2) - 1)) / (2 * Math.sqrt(3));
-    if (A === 2) {
-      stddev = (2 * X - 2) / (2 * Math.sqrt(6));
-    }
     const levels = [-2, -1, 0, 1, 2].map(level =>
       getDiceLevel(mean, stddev, level)
     );
