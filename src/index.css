@@ -148,13 +148,23 @@ p.calculator-summary .tooltip {
 #essay h2 {
   font-size: 1.6875rem;
   line-height: 2.25rem;
-  margin: 2.25rem 0 1.125rem;
+  margin: 2.25rem 0 0;
 }
-#essay p {
+#essay p,
+#essay h3 {
   font-size: 1.125rem;
   line-height: 1.6875rem;
   margin: 0.5625rem 0;
 }
+#essay h3 {
+  font-size: 1.25rem;
+  margin-top: 1.125rem;
+  margin-bottom: 0;
+}
 #essay a {
   color: #0095c6;
+}
+#essay mark {
+  background-color: #f5ef96;
+  padding: 0 0.166667em;
 }
