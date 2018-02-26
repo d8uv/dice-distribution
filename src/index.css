@@ -172,7 +172,8 @@ p.calculator-summary .tooltip {
   text-align: center;
   border: 1px solid #ccc;
   border-width: 1px 0;
+  margin-bottom: 1.125rem;
 }
-#essay .formula .expression{
-  display:inline-block
+#essay .formula .expression {
+  display: inline-block;
 }

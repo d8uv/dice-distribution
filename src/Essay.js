@@ -48,24 +48,44 @@ const Essay = props => (
       </em>.
     </p>
     <p>
-      The mean is the most common result. It’s the number in the middle, and the
-      most likely to show up, due to it having the most number of possible ways
-      to roll it. Here’s how to find the mean:
+      The <em>mean</em> is the most common result. It’s the number in the
+      middle, and the most likely to show up, due to it having the most number
+      of possible ways to roll it. Here’s how to find the mean of a given dice
+      formula:
     </p>
     <div className="formula">
       <p>
         <span className="expression">mean</span>{" "}
         <span className="expression">
-          =
+          ={" "}
           <mark>
-            μ(<var>A</var>, <var>X</var>, <var>B</var>) = (<var>A</var> × (1 +{" "}
-            <var>X</var>))/2 + <var>B</var>
+            μ = (<var>A</var> × (1 + <var>X</var>)) / 2 + <var>B</var>
           </mark>
         </span>{" "}
         <span className="expression">
-          = ({props.A} × (1 + {props.X}))/2 + {props.B}
+          = ({props.A} × (1 + {props.X})) / 2 + {props.B}
         </span>{" "}
         <span className="expression">= {props.mean}</span>
+      </p>
+    </div>
+    <p>
+      The <em>standard deviation</em> is… how far everything tends to be from
+      the mean. It’s the average amount that all rolls will differ from the
+      mean. Here’s how to find the standard deviation of a given dice formula:
+    </p>
+    <div className="formula">
+      <p>
+        <span className="expression">standard deviation</span>{" "}
+        <span className="expression">
+          ={" "}
+          <mark>
+            σ = √(<var>A</var> × (<var>X</var>² − 1)) / (2 × √(3))
+          </mark>
+        </span>{" "}
+        <span className="expression">
+          = √({props.A} × ({props.X}² − 1)) / (2 × √(3))
+        </span>{" "}
+        <span className="expression">≈ {props.stddev.toFixed(3)}</span>
       </p>
     </div>
   </div>
