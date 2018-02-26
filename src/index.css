@@ -47,7 +47,7 @@ h1 svg.u1f662 {
 #calculator .form-container {
   font-size: 0.5em;
   line-height: 1;
-  padding: 0.5em;
+  padding: 1.125rem 0.5em;
   background: #eee;
 }
 #calculator form {
@@ -167,4 +167,12 @@ p.calculator-summary .tooltip {
 #essay mark {
   background-color: #f5ef96;
   padding: 0 0.166667em;
+}
+#essay .formula {
+  text-align: center;
+  border: 1px solid #ccc;
+  border-width: 1px 0;
+}
+#essay .formula .expression{
+  display:inline-block
 }
