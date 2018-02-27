@@ -159,16 +159,17 @@ const Essay = props => (
       <mark>
         Only 3 or more dice actually approximate a normal distribution.
       </mark>
-      <br />For two dice, it’s far more accurate to use the correct
-      distribution—the{" "}
+      <br />For two dice, it’s more accurate to use the correct distribution—the{" "}
       <a href="https://en.wikipedia.org/wiki/Triangular_distribution">
         triangular distribution
       </a>. I’m using the normal distribution anyway, because{" "}
-      <em>eh close enough.</em> Much of the math works out anyway.<br />For one
-      die, we’re dealing with the{" "}
+      <em>eh close enough.</em> The results for μ±σ seem fine, even if the
+      results for μ±2σ aren’t.<br />
+      For one die, we’re dealing with the{" "}
       <a href="https://en.wikipedia.org/wiki/Discrete_uniform_distribution">
         discrete uniform distribution
-      </a>, and all of the results are stupid.
+      </a>, and all of these results are stupid.
+      <p>BTW <a href="http://anydice.com/">AnyDice</a> is amazing.</p>
     </p>
   </div>
 );
