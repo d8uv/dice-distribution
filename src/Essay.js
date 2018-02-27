@@ -37,21 +37,16 @@ const Essay = props => (
     <h3>Finding the Normal Distribution</h3>
     <p>
       In order to find the normal distribution, we need to find two things: The{" "}
-      <em>
-        <a href="https://en.wikipedia.org/wiki/Mean">mean</a> (μ)
-      </em>, and the{" "}
-      <em>
-        <a href="https://en.wikipedia.org/wiki/Standard_deviation">
-          standard deviation
-        </a>{" "}
-        (σ)
-      </em>.
+      <em>mean (μ)</em>, and the <em>standard deviation (σ)</em>.
     </p>
     <p>
-      The <em>mean</em> is the most common result. It’s the number in the
-      middle, and the most likely to show up, due to it having the most number
-      of possible ways to roll it. Here’s how to find the mean of a given dice
-      formula:
+      The{" "}
+      <em>
+        <a href="https://en.wikipedia.org/wiki/Mean">mean</a>
+      </em>{" "}
+      is the most common result. It’s the number in the middle, and the most
+      likely to show up, due to it having the most number of possible ways to
+      roll it. Here’s how to find the mean of a given dice formula:
     </p>
     <div className="formula">
       <p>
@@ -69,9 +64,15 @@ const Essay = props => (
       </p>
     </div>
     <p>
-      The <em>standard deviation</em> is… how far everything tends to be from
-      the mean. It’s the average amount that all rolls will differ from the
-      mean. Here’s how to find the standard deviation of a given dice formula:
+      The{" "}
+      <em>
+        <a href="https://en.wikipedia.org/wiki/Standard_deviation">
+          standard deviation
+        </a>
+      </em>{" "}
+      is… how far everything tends to be from the mean. It’s the average amount
+      that all rolls will differ from the mean. Here’s how to find the standard
+      deviation of a given dice formula:
     </p>
     <div className="formula">
       <p>
@@ -88,6 +89,7 @@ const Essay = props => (
         <span className="expression">≈ {props.stddev.toFixed(3)}</span>
       </p>
     </div>
+    <p>Now, you could <a href={"http://www.wolframalpha.com/input/?i=NormalDistribution%5B" + props.mean + ",+" + props.stddev.toFixed(3) + "%5D"}>put the mean and standard deviation into Wolfram|Alpha to get the normal distribution</a>, and it will give you a lot of information. But, we can do something simpler.</p>
   </div>
 );
 
