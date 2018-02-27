@@ -89,7 +89,25 @@ const Essay = props => (
         <span className="expression">≈ {props.stddev.toFixed(3)}</span>
       </p>
     </div>
-    <p>Now, you could <a href={"http://www.wolframalpha.com/input/?i=NormalDistribution%5B" + props.mean + ",+" + props.stddev.toFixed(3) + "%5D"}>put the mean and standard deviation into Wolfram|Alpha to get the normal distribution</a>, and it will give you a lot of information. But, we can do something simpler.</p>
+    <p>
+      Now, you could{" "}
+      <a
+        href={
+          "http://www.wolframalpha.com/input/?i=NormalDistribution%5B" +
+          props.mean +
+          ",+" +
+          props.stddev.toFixed(3) +
+          "%5D"
+        }
+      >
+        put the mean and standard deviation into Wolfram|Alpha to get the normal
+        distribution
+      </a>, and it will give you a lot of information. But, we can do something
+      simpler.
+    </p>
+    <h3>The 68–95–99.7 rule</h3>
+    <p>Due to <a href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule">the 68–95–99.7 rule</a>, for normal distributions, <mark>there’s a 68.27% chance that any roll will be within one standard deviation of the mean (μ±σ)</mark>. So, for the above mean and standard deviation, there's a 68% chance that any roll will be between {(props.mean - props.stddev).toFixed(3)} (μ−σ) and {(props.mean + props.stddev).toFixed(3)} (μ+σ).</p><p>Furthermore, <mark>there’s a 95.45% chance that any roll will be within two standard deviations of the mean (μ±2σ)</mark>. Again, for the above mean and standard deviation, there's a 95% chance that any roll will be between {(props.mean - 2 * props.stddev).toFixed(3)} (μ−2σ) and {(props.mean + 2 *props.stddev).toFixed(3)} (μ+2σ).</p>
+    <p>As you can see from this, it's really easy to construct ranges of likely values. If you're rolling {props.A}d{props.X} {props.B < 0 ? "−" : "+"} {Math.abs(props.B)}, the most common result will be around {props.mean}. About 2 out of 3 rolls will take place between {(props.mean - props.stddev).toFixed(1)} and {(props.mean + props.stddev).toFixed(1)}. Only about 1 in 22 rolls will take place outside of {(props.mean - 2 *props.stddev).toFixed(1)} and {(props.mean + 2 *props.stddev).toFixed(1)}.</p>
   </div>
 );
 
