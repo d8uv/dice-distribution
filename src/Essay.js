@@ -106,8 +106,70 @@ const Essay = props => (
       simpler.
     </p>
     <h3>The 68–95–99.7 rule</h3>
-    <p>Due to <a href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule">the 68–95–99.7 rule</a>, for normal distributions, <mark>there’s a 68.27% chance that any roll will be within one standard deviation of the mean (μ±σ)</mark>. So, for the above mean and standard deviation, there's a 68% chance that any roll will be between {(props.mean - props.stddev).toFixed(3)} (μ−σ) and {(props.mean + props.stddev).toFixed(3)} (μ+σ).</p><p>Furthermore, <mark>there’s a 95.45% chance that any roll will be within two standard deviations of the mean (μ±2σ)</mark>. Again, for the above mean and standard deviation, there's a 95% chance that any roll will be between {(props.mean - 2 * props.stddev).toFixed(3)} (μ−2σ) and {(props.mean + 2 *props.stddev).toFixed(3)} (μ+2σ).</p>
-    <p>As you can see from this, it's really easy to construct ranges of likely values. If you're rolling {props.A}d{props.X} {props.B < 0 ? "−" : "+"} {Math.abs(props.B)}, the most common result will be around {props.mean}. About 2 out of 3 rolls will take place between {(props.mean - props.stddev).toFixed(1)} and {(props.mean + props.stddev).toFixed(1)}. Only about 1 in 22 rolls will take place outside of {(props.mean - 2 *props.stddev).toFixed(1)} and {(props.mean + 2 *props.stddev).toFixed(1)}.</p>
+    <p>
+      Due to{" "}
+      <a href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule">
+        the 68–95–99.7 rule
+      </a>, for normal distributions,{" "}
+      <mark>
+        there’s a 68.27% chance that any roll will be within one standard
+        deviation of the mean (μ±σ)
+      </mark>. So, for the above mean and standard deviation, there’s a 68%
+      chance that any roll will be between{" "}
+      {(props.mean - props.stddev).toFixed(3)} (μ−σ) and{" "}
+      {(props.mean + props.stddev).toFixed(3)} (μ+σ).
+    </p>
+    <p>
+      Furthermore,{" "}
+      <mark>
+        there’s a 95.45% chance that any roll will be within two standard
+        deviations of the mean (μ±2σ)
+      </mark>. Again, for the above mean and standard deviation, there’s a 95%
+      chance that any roll will be between{" "}
+      {(props.mean - 2 * props.stddev).toFixed(3)} (μ−2σ) and{" "}
+      {(props.mean + 2 * props.stddev).toFixed(3)} (μ+2σ).
+    </p>
+    <p>
+      As you can see from this, it’s really easy to construct ranges of likely
+      values. If you’re rolling {props.A}d{props.X} {props.B < 0 ? "−" : "+"}{" "}
+      {Math.abs(props.B)}, the most common result will be around {props.mean}.
+      About 2 out of 3 rolls will take place between{" "}
+      {(props.mean - props.stddev).toFixed(1)} and{" "}
+      {(props.mean + props.stddev).toFixed(1)}. Only about 1 in 22 rolls will
+      take place outside of {(props.mean - 2 * props.stddev).toFixed(1)} and{" "}
+      {(props.mean + 2 * props.stddev).toFixed(1)}.
+    </p>
+    <h3>No, but really:</h3>
+    <p>There’s two bits of weirdness that I need to talk about.</p>
+    <p>
+      First, although it’s a little funky, <strong>I’m rounding down</strong>{" "}
+      (technically{" "}
+      <a href="https://en.wikipedia.org/wiki/Floor_and_ceiling_functions">
+        flooring
+      </a>, that’s what those ⌊⌋ symbols mean). This is to stay consistent with
+      the "Round Down" rule on page 4 of the{" "}
+      <a href="http://media.wizards.com/2016/downloads/DND/PlayerBasicRulesV03.pdf">
+        D&amp;D 5e Player’s Basic Rules PDF
+      </a>. It would be more mathematically pure to round normally, but the
+      difference is tiny regardless, and these are just guidelines anyway. Just
+      because this looks precise doesn’t mean that it actually is.
+    </p>
+    <p>
+      Secondly, <strong>I’m sort of lying.</strong>{" "}
+      <mark>
+        Only 3 or more dice actually approximate a normal distribution.
+      </mark>
+      <br />For two dice, it’s far more accurate to use the correct
+      distribution—the{" "}
+      <a href="https://en.wikipedia.org/wiki/Triangular_distribution">
+        triangular distribution
+      </a>. I’m using the normal distribution anyway, because{" "}
+      <em>eh close enough.</em> Much of the math works out anyway.<br />For one
+      die, we’re dealing with the{" "}
+      <a href="https://en.wikipedia.org/wiki/Discrete_uniform_distribution">
+        discrete uniform distribution
+      </a>, and all of the results are stupid.
+    </p>
   </div>
 );
 
