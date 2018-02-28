@@ -134,28 +134,15 @@ const Essay = props => (
       values. If you’re rolling {props.A}d{props.X} {props.B < 0 ? "−" : "+"}{" "}
       {Math.abs(props.B)}, the most common result will be around {props.mean}.
       About 2 out of 3 rolls will take place between{" "}
-      {(props.mean - props.stddev).toFixed(1)} and{" "}
-      {(props.mean + props.stddev).toFixed(1)}. Only about 1 in 22 rolls will
-      take place outside of {(props.mean - 2 * props.stddev).toFixed(1)} and{" "}
-      {(props.mean + 2 * props.stddev).toFixed(1)}.
+      {(props.mean - props.stddev).toFixed(2)} and{" "}
+      {(props.mean + props.stddev).toFixed(2)}. Only about 1 in 22 rolls will
+      take place outside of {(props.mean - 2 * props.stddev).toFixed(2)} and{" "}
+      {(props.mean + 2 * props.stddev).toFixed(2)}.
     </p>
     <h3>No, but really:</h3>
     <p>There’s two bits of weirdness that I need to talk about.</p>
     <p>
-      First, although it’s a little funky, <strong>I’m rounding down</strong>{" "}
-      (technically{" "}
-      <a href="https://en.wikipedia.org/wiki/Floor_and_ceiling_functions">
-        flooring
-      </a>, that’s what those ⌊⌋ symbols mean). This is to stay consistent with
-      the "Round Down" rule on page 4 of the{" "}
-      <a href="http://media.wizards.com/2016/downloads/DND/PlayerBasicRulesV03.pdf">
-        D&amp;D 5e Player’s Basic Rules PDF
-      </a>. It would be more mathematically pure to round normally, but the
-      difference is tiny regardless, and these are just guidelines anyway. Just
-      because this looks precise doesn’t mean that it actually is.
-    </p>
-    <p>
-      Secondly, <strong>I’m sort of lying.</strong>{" "}
+      Firstly, <strong>I’m sort of lying.</strong>{" "}
       <mark>
         Only 3 or more dice actually approximate a normal distribution.
       </mark>
@@ -168,8 +155,16 @@ const Essay = props => (
       For one die, we’re dealing with the{" "}
       <a href="https://en.wikipedia.org/wiki/Discrete_uniform_distribution">
         discrete uniform distribution
-      </a>, and all of these results are stupid.
-      <p>BTW <a href="http://anydice.com/">AnyDice</a> is amazing.</p>
+      </a>, and all of these results are stupid. Maybe the mean is useful,
+      maybe, but everything else is absolute nonsense.
+    </p>
+    <p>
+      Secondly, I’m ignoring the "Round Down" rule on page 7 of the D&amp;D 5e
+      Player’s Handbook. I'm using the same ol’ ordinary rounding that the rest
+      of math does. This means that things (especially mean values) will
+      probably be a little off. It might be better to round it all down to be
+      more consistent with the rest of 5e math, but… honestly, if things might
+      be off by one sometimes, it’s not the end of the world.
     </p>
   </div>
 );

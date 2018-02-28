@@ -4,7 +4,7 @@ import Calculator from "./Calculator";
 import Essay from "./Essay";
 import "./App.css";
 
-const getDiceLevel = (mean, stddev, level) => Math.floor(mean + stddev * level);
+const getDiceLevel = (mean, stddev, level) => Math.round(mean + stddev * level);
 
 class App extends PureComponent {
   constructor(props) {

@@ -40,7 +40,7 @@ class NumberInput extends PureComponent {
 const LevelRow = props => (
   <li className={props.className}>
     <span className="col lhs">{props.lhs}</span>{" "}
-    <span className="col eq">=</span>{" "}
+    <span className="col eq">{props.eq}</span>{" "}
     <span className="col rhs">{props.rhs}</span>
   </li>
 );
@@ -115,12 +115,12 @@ const Calculator = props => {
         <Fragment>
           <ul className="levels">
             <LevelRow
-              lhs="min"
+              lhs="min" eq="="
               rhs={1 + props.B}
               className="sigma-0 italic-lhs"
             />
             <LevelRow
-              lhs="max"
+              lhs="max" eq="="
               rhs={props.X + props.B}
               className="sigma-0 italic-lhs"
             />
@@ -136,15 +136,15 @@ const Calculator = props => {
         <Fragment>
           <ul className="levels">
             <LevelRow
-              lhs="min"
+              lhs="min" eq="="
               rhs={2 + props.B}
               className="sigma-2 italic-lhs"
             />
-            <LevelRow lhs="⌊μ−σ⌋" rhs={props.levels[1]} className="sigma-1" />
-            <LevelRow lhs="⌊μ⌋" rhs={props.levels[2]} className="sigma-0" />
-            <LevelRow lhs="⌊μ+σ⌋" rhs={props.levels[3]} className="sigma-1" />
+            <LevelRow lhs="μ−σ" eq="≈" rhs={props.levels[1]} className="sigma-1" />
+            <LevelRow lhs="μ" eq="≈" rhs={props.levels[2]} className="sigma-0" />
+            <LevelRow lhs="μ+σ" eq="≈" rhs={props.levels[3]} className="sigma-1" />
             <LevelRow
-              lhs="max"
+              lhs="max" eq="="
               rhs={props.X * 2 + props.B}
               className="sigma-2 italic-lhs"
             />
@@ -160,11 +160,11 @@ const Calculator = props => {
       levels = (
         <Fragment>
           <ul className="levels">
-            <LevelRow lhs="⌊μ−2σ⌋" rhs={props.levels[0]} className="sigma-2" />
-            <LevelRow lhs="⌊μ−σ⌋" rhs={props.levels[1]} className="sigma-1" />
-            <LevelRow lhs="⌊μ⌋" rhs={props.levels[2]} className="sigma-0" />
-            <LevelRow lhs="⌊μ+σ⌋" rhs={props.levels[3]} className="sigma-1" />
-            <LevelRow lhs="⌊μ+2σ⌋" rhs={props.levels[4]} className="sigma-2" />
+            <LevelRow lhs="μ−2σ" eq="≈" rhs={props.levels[0]} className="sigma-2" />
+            <LevelRow lhs="μ−σ" eq="≈" rhs={props.levels[1]} className="sigma-1" />
+            <LevelRow lhs="μ" eq="≈" rhs={props.levels[2]} className="sigma-0" />
+            <LevelRow lhs="μ+σ" eq="≈" rhs={props.levels[3]} className="sigma-1" />
+            <LevelRow lhs="μ+2σ" eq="≈" rhs={props.levels[4]} className="sigma-2" />
           </ul>
           <ul className="nerd-stats">
             <li>μ = {props.mean}</li>
