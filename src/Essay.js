@@ -12,7 +12,7 @@ const Essay = props => (
       <a href="https://en.wikipedia.org/wiki/Normal_distribution">
         normal distribution
       </a>. And, if we convert the dice notation to a normal distribution, we
-      can easily create ranges likely or rare rolls.
+      can easily create ranges of likely or rare rolls.
     </p>
     <h3>Dice notation</h3>
     <p>
@@ -159,13 +159,87 @@ const Essay = props => (
       maybe, but everything else is absolute nonsense.
     </p>
     <p>
-      Secondly, I’m ignoring the "Round Down" rule on page 7 of the D&amp;D 5e
+      Secondly, I’m ignoring the “Round Down” rule on page 7 of the D&amp;D 5e
       Player’s Handbook. I'm using the same ol’ ordinary rounding that the rest
       of math does. This means that things (especially mean values) will
       probably be a little off. It might be better to round it all down to be
       more consistent with the rest of 5e math, but… honestly, if things might
       be off by one sometimes, it’s not the end of the world.
     </p>
+    <p>
+      This tool has a number of uses, like creating bespoke traps for your PCs.
+      But, I want to show you the reason I made this in the first place:
+    </p>
+    <h2>Introducing the “Killable Zone”</h2>
+    <aside className="statblock">
+      <h3>Bugbear</h3>
+      <p className="race">
+        <i>
+          <small>Medium humanoid (goblinoid), chaotic evil</small>
+        </i>
+      </p>
+      <p>
+        <b>Armor Class:</b> 16 (hide, shield)<br />
+        <b>Hit Points:</b> 27 (5d8 + 5)<br />
+        <mark className="killable-zone">
+          <b>Killable Zone:</b> 22 – 33
+        </mark>
+        <br />
+        <b>Speed:</b> 30 ft.
+      </p>
+      <table className="ability-scores">
+        {/* <caption>Ability Scores</caption> */}
+        <tbody>
+          <tr>
+            <th scope="col">
+              <abbr title="Strength">Str</abbr>
+            </th>
+            <th scope="col">
+              <abbr title="Dexterity">Dex</abbr>
+            </th>
+            <th scope="col">
+              <abbr title="Constitution">Con</abbr>
+            </th>
+            <th scope="col">
+              <abbr title="Intelligence">Int</abbr>
+            </th>
+            <th scope="col">
+              <abbr title="Wisdom">Wis</abbr>
+            </th>
+            <th scope="col">
+              <abbr title="Charisma">Cha</abbr>
+            </th>
+          </tr>
+          <tr>
+            <td>15 (+2)</td>
+            <td>14 (+2)</td>
+            <td>13 (+1)</td>
+            <td>8 (−1)</td>
+            <td>11 (+0)</td>
+            <td>9 (−1)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        <b>Skills:</b> Stealth +6, Survival +2<br />
+        <b>Senses:</b> darkvision 60ft., passive Perception 10<br />
+        <b>Languages:</b> Common, Goblin<br />
+        <b>Challenge:</b> 1 (200 XP)
+      </p>
+      <p>
+        <b>Brute.</b> A melee weapon deals one extra die of its damage when the
+        bugbear hits with it (included in the attack).
+      </p>
+      <p>
+        <b>Surprise Attack.</b> If the bugbear surprises a creature and hits it
+        with an attack during the first round of combat, the target takes an
+        extra 7 (2d6) damage from the attack.
+      </p>
+    </aside>
+    <p>In stat blocks, hit points are shown as a number, and a dice formula. Most DMs just treat that number as “that’s how many hit points that monster has”, but there’s a more flexible and interesting way to do this.</p>
+    <p>Consider the Bugbear, who has <u className="changeDiceFormula" data-a="5" data-x="8" data-b="5" onClick={props.changeDiceFormula}>5d8 + 5</u> HP. Using the above tool, we can see that μ−σ ≈ 22, and μ+σ ≈ 33. So, we define the killing zone of the bugbear as 22 – 33.</p>
+    <p>This allows you, as the DM, to easily adjust combat encounters on the fly, but in a rules-as-intended way. Combat going a little easy? A little too hard? This lets you know how much you can nudge things, without it getting weird.</p>
+    <p>There’s a bunch of other things you can do with this, such as time when your monsters die for the best dramatic impact, or make a weaker-than-normal monster (or stronger) for RP reasons.</p>
   </div>
 );
 

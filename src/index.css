@@ -161,7 +161,8 @@ p.calculator-summary .tooltip {
   margin-top: 1.125rem;
   margin-bottom: 0;
 }
-#essay a {
+#essay a,
+#essay u.changeDiceFormula:hover {
   color: #0095c6;
 }
 #essay mark {
@@ -176,4 +177,47 @@ p.calculator-summary .tooltip {
 }
 #essay .formula .expression {
   display: inline-block;
+}
+#essay u.changeDiceFormula {
+  cursor: pointer;
+}
+
+#essay .statblock {
+  width: 24em;
+  box-shadow: 0 0.25em 1em #ccc;
+  border: 1px solid #ccc;
+  padding: 1em;
+  transform: scale(0.8) rotate(2deg);
+  float: right;
+}
+@media screen and (max-width: 50em) {
+  #essay .statblock {
+    display: none;
+  }
+}
+#essay .statblock h3 {
+  margin-top: 0;
+}
+#essay .statblock p.race {
+  margin-top: -0.28125rem;
+}
+#essay .statblock mark.killable-zone {
+  margin-left: -0.1875rem;
+}
+#essay .statblock table.ability-scores {
+  border: 0 solid #ccc;
+  border-width: 1px 0;
+  line-height: 1;
+}
+#essay .statblock table.ability-scores th,
+#essay .statblock table.ability-scores td {
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  text-align: center;
+}
+#essay .statblock table.ability-scores th {
+  text-transform: uppercase;
+}
+#essay .statblock table.ability-scores abbr {
+  text-decoration: underline #ccc;
 }

@@ -14,6 +14,19 @@ class App extends PureComponent {
   changeA = event => this.setState({ A: parseInt(event.target.value, 10) });
   changeX = event => this.setState({ X: parseInt(event.target.value, 10) });
   changeB = event => this.setState({ B: parseInt(event.target.value, 10) });
+  changeDiceFormula = event => {
+    const data = event.target.dataset;
+    console.log({
+        A: parseInt(data.a, 10),
+        X: parseInt(data.x, 10),
+        B: parseInt(data.b, 10)
+      })
+    this.setState({
+      A: parseInt(data.a, 10),
+      X: parseInt(data.x, 10),
+      B: parseInt(data.b, 10)
+    });
+  };
 
   render() {
     const A = this.state.A;
@@ -39,7 +52,15 @@ class App extends PureComponent {
           changeX={this.changeX}
           changeB={this.changeB}
         />
-        <Essay A={A} X={X} B={B} mean={mean} stddev={stddev} levels={levels} />
+        <Essay
+          A={A}
+          X={X}
+          B={B}
+          mean={mean}
+          stddev={stddev}
+          levels={levels}
+          changeDiceFormula={this.changeDiceFormula}
+        />
       </div>
     );
   }
