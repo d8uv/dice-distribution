@@ -387,7 +387,7 @@ class Essay extends PureComponent {
         </p>
         <p>
           Secondly, I’m ignoring the “Round Down” rule on page 7 of the D&amp;D
-          5e Player’s Handbook. I'm using the same ol’ ordinary rounding that
+          5e Player’s Handbook. I’m using the same ol’ ordinary rounding that
           the rest of math does. This means that things (especially mean values)
           will probably be a little off. It might be better to round it all down
           to be more consistent with the rest of 5e math, but… honestly, if
@@ -432,7 +432,7 @@ class Essay extends PureComponent {
           weaker-than-normal monster (or stronger) for RP reasons.
         </p>
         <p>
-          For example, let's say you have an encounter with two{" "}
+          For example, let’s say you have an encounter with two{" "}
           <ChangeStatBlockLink value="worg" onClick={this.changeStatblock}>
             worgs
           </ChangeStatBlockLink>, and one{" "}

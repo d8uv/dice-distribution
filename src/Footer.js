@@ -11,7 +11,13 @@ const Footer = props => (
         Source code available on GitHub
       </a>.
     </p>
-    <p>“Bugbear” and “Worg” statblocks are courtesy of the <a href="http://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf">System Reference Document 5.1</a>, © 2016 Wizards of the Coast. Plz no sue. </p>
+    <p>
+      “Bugbear” and “Worg” statblocks are courtesy of the{" "}
+      <a href="http://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf">
+        System Reference Document 5.1
+      </a>, © 2016 Wizards of the Coast, licensed under the Open Gaming License
+      1.0a. Plz no sue.
+    </p>
   </footer>
 );
 
