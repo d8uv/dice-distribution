@@ -187,6 +187,7 @@ p.calculator-summary .tooltip {
     "Century Schoolbook L", Georgia, serif;
   padding: 0;
   border: 0;
+  background: none;
   cursor: pointer;
   text-decoration: underline;
 }
