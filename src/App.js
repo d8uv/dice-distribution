@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import Header from "./Header";
 import Calculator from "./Calculator";
 import Essay from "./Essay";
+import Footer from "./Footer";
 import "./App.css";
 
 const getDiceLevel = (mean, stddev, level) => Math.round(mean + stddev * level);
@@ -17,10 +18,10 @@ class App extends PureComponent {
   changeDiceFormula = event => {
     const data = event.target.dataset;
     console.log({
-        A: parseInt(data.a, 10),
-        X: parseInt(data.x, 10),
-        B: parseInt(data.b, 10)
-      })
+      A: parseInt(data.a, 10),
+      X: parseInt(data.x, 10),
+      B: parseInt(data.b, 10)
+    });
     this.setState({
       A: parseInt(data.a, 10),
       X: parseInt(data.x, 10),
@@ -61,6 +62,7 @@ class App extends PureComponent {
           levels={levels}
           changeDiceFormula={this.changeDiceFormula}
         />
+        <Footer />
       </div>
     );
   }
