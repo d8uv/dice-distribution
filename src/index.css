@@ -162,7 +162,7 @@ p.calculator-summary .tooltip {
   margin-bottom: 0;
 }
 #essay a,
-#essay u.changeDiceFormula:hover {
+#essay button.changeStateFauxLink:hover {
   color: #0095c6;
 }
 #essay mark {
@@ -178,8 +178,17 @@ p.calculator-summary .tooltip {
 #essay .formula .expression {
   display: inline-block;
 }
-#essay u.changeDiceFormula {
+#essay button.changeStateFauxLink {
+  
+  font: 1em "EB Garamond", "Palatino Linotype", Palatino, Palladio,
+    "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style",
+    "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond",
+    "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook",
+    "Century Schoolbook L", Georgia, serif;
+  padding: 0;
+  border: 0;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 #essay .statblock {
@@ -220,4 +229,20 @@ p.calculator-summary .tooltip {
 }
 #essay .statblock table.ability-scores abbr {
   text-decoration: underline #ccc;
+}
+#essay .statblock h4.actions {
+  border-top: 1px solid #ccc;
+  margin: 0;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
 }
