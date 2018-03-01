@@ -1,8 +1,11 @@
 {
   "name": "dice-to-distribution",
   "version": "0.1.0",
-  "private": true,
   "homepage": "http://www.d8uv.org/dice-to-distribution/",
+  "private": true,
+  "repository": "github:d8uv/dice-distribution",
+  "license": "CC-BY-4.0",
+  "author": "d8uv <d8uv@d8uv.org> (http://www.d8uv.org/)",
   "dependencies": {
     "number-to-words": "^1.2.3",
     "react": "^16.2.0",
@@ -12,7 +15,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && react-snapshot",
-    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
