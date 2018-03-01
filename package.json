@@ -2,6 +2,7 @@
   "name": "dice-to-distribution",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://www.d8uv.org/dice-to-distribution/",
   "dependencies": {
     "number-to-words": "^1.2.3",
     "react": "^16.2.0",

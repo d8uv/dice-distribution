@@ -438,7 +438,16 @@ class Essay extends PureComponent {
           </ChangeStatBlockLink>, and one{" "}
           <ChangeStatBlockLink value="bugbear" onClick={this.changeStatblock}>
             bugbear
-          </ChangeStatBlockLink>.
+          </ChangeStatBlockLink>. With this, you can RP one of the worgs as a
+          bit sickly, and kill off that worg as soon as it enters the killable
+          zone. The other worg you can kill off whenever it feels right for
+          combat balance. And, you could RP the bugbear as hating one of the
+          PCs, and when the bugbear enters the killable zone, you can delay it’s
+          death until that PC gets the killing blow.
+        </p>
+        <p>
+          That seems, to me, to be a little cooler than static HP values. Up to
+          you, though!
         </p>
       </div>
     );
