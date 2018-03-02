@@ -228,20 +228,20 @@ class Essay extends PureComponent {
         <p>
           Obviously, there's a bit of math involved in the calculator above, and
           I want to show you how it works. After that, I want to show you one
-          application of the tool that’s gotten me pretty excited—the “Killable
-          Zone”. First…
+          application of the tool for D&D that’s gotten me pretty excited—the
+          “Killable Zone”. First…
         </p>
         <h2>Finding ranges of likely rolls using the Normal Distribution</h2>
         <p>
           When you roll multiple dice at a time, some results are more common
           than others. For example, with 3d6, there’s only one way to get a 3,
-          and that’s to roll all 1s. But, there’s 27 ways to roll a 10 (4+3+3,
-          5+1+4, etc). As it turns out, you more dice you add, the more it tends
-          to resemble a{" "}
+          and that’s to roll all 1s. In contrast, there’s 27 ways to roll a 10
+          (4+3+3, 5+1+4, etc). As it turns out, you more dice you add, the more
+          it tends to resemble a{" "}
           <a href="https://en.wikipedia.org/wiki/Normal_distribution">
             normal distribution
-          </a>. And, if we convert the dice notation to a normal distribution,
-          we can easily create ranges of likely or rare rolls.
+          </a>. This means that if we convert the dice notation to a normal
+          distribution, we can easily create ranges of likely or rare rolls.
         </p>
         <h3>Dice notation</h3>
         <p>
@@ -275,9 +275,10 @@ class Essay extends PureComponent {
           <em>
             <a href="https://en.wikipedia.org/wiki/Mean">mean</a>
           </em>{" "}
-          is the most common result. It’s the number in the middle, and the most
-          likely to show up, due to it having the most number of possible ways
-          to roll it. Here’s how to find the mean of a given dice formula:
+          is the most common result. It’s the number which is the most likely
+          total any given roll of the dice due to it having the most number of
+          possible ways to come up. Here’s how to find the mean of a given dice
+          formula:
         </p>
         <div className="formula">
           <p>
@@ -301,7 +302,7 @@ class Essay extends PureComponent {
               standard deviation
             </a>
           </em>{" "}
-          is… how far everything tends to be from the mean. It’s the average
+          is how far everything tends to be from the mean. It’s the average
           amount that all rolls will differ from the mean. Here’s how to find
           the standard deviation of a given dice formula:
         </p>
@@ -329,8 +330,8 @@ class Essay extends PureComponent {
           >
             put the mean and standard deviation into Wolfram|Alpha to get the
             normal distribution
-          </a>, and it will give you a lot of information. But, we can do
-          something simpler.
+          </a>, and it will give you a lot of information. We don’t have to get
+          that fancy; we can do something simpler.
         </p>
         <h3>The 68–95–99.7 rule</h3>
         <p>
@@ -357,8 +358,8 @@ class Essay extends PureComponent {
           {(props.mean + 2 * props.stddev).toFixed(3)} (μ+2σ).
         </p>
         <p>
-          As you can see from this, it’s really easy to construct ranges of
-          likely values. If you’re rolling {props.A}d{props.X}{" "}
+          As you can see, it’s really easy to construct ranges of likely values
+          using this method. If you’re rolling {props.A}d{props.X}{" "}
           {props.B < 0 ? "−" : "+"} {Math.abs(props.B)}, the most common result
           will be around {props.mean}. About 2 out of 3 rolls will take place
           between {(props.mean - props.stddev).toFixed(2)} and{" "}
@@ -370,7 +371,7 @@ class Essay extends PureComponent {
         <h3>No, but really:</h3>
         <p>There’s two bits of weirdness that I need to talk about.</p>
         <p>
-          Firstly, <strong>I’m sort of lying.</strong>{" "}
+          First, <strong>I’m sort of lying.</strong>{" "}
           <mark>
             Only 3 or more dice actually approximate a normal distribution.
           </mark>
@@ -384,15 +385,17 @@ class Essay extends PureComponent {
           For one die, we’re dealing with the{" "}
           <a href="https://en.wikipedia.org/wiki/Discrete_uniform_distribution">
             discrete uniform distribution
-          </a>, and all of these results are stupid. Maybe the mean is useful,
-          maybe, but everything else is absolute nonsense.
+          </a>, and all of these results are stupid. Maybe the mean is useful—<em
+          >
+            maybe
+          </em>—but everything else is absolute nonsense.
         </p>
         <p>
           Secondly, I’m ignoring the “Round Down” rule on page 7 of the D&amp;D
-          5e Player’s Handbook. I’m using the same ol’ ordinary rounding that
+          5e Player’s Handbook. I’m using the same old ordinary rounding that
           the rest of math does. This means that things (especially mean values)
           will probably be a little off. It might be better to round it all down
-          to be more consistent with the rest of 5e math, but… honestly, if
+          to be more consistent with the rest of 5e math, but honestly, if
           things might be off by one sometimes, it’s not the end of the world.
         </p>
         <p>
@@ -412,7 +415,7 @@ class Essay extends PureComponent {
           Consider the{" "}
           <ChangeStatBlockLink value="bugbear" onClick={this.changeStatblock}>
             Bugbear
-          </ChangeStatBlockLink>, who has{" "}
+          </ChangeStatBlockLink>, a creature which has{" "}
           <ChangeDiceFormulaLink
             A="5"
             X="8"
@@ -425,7 +428,7 @@ class Essay extends PureComponent {
         <p>
           This allows you, as the DM, to easily adjust combat encounters on the
           fly, but in a rules-as-intended way. Combat going a little easy? A
-          little too hard? This lets you know how much you can nudge things,
+          little too hard? This lets you know how much you can nudge things
           without it getting weird.
         </p>
         <p>
@@ -437,19 +440,26 @@ class Essay extends PureComponent {
           For example, let’s say you have an encounter with two{" "}
           <ChangeStatBlockLink value="worg" onClick={this.changeStatblock}>
             worgs
-          </ChangeStatBlockLink>, and one{" "}
+          </ChangeStatBlockLink>{" "}
+          and one{" "}
           <ChangeStatBlockLink value="bugbear" onClick={this.changeStatblock}>
             bugbear
-          </ChangeStatBlockLink>. With this, you can RP one of the worgs as a
-          bit sickly, and kill off that worg as soon as it enters the killable
-          zone. The other worg you can kill off whenever it feels right for
-          combat balance. And, you could RP the bugbear as hating one of the
-          PCs, and when the bugbear enters the killable zone, you can delay it’s
-          death until that PC gets the killing blow.
+          </ChangeStatBlockLink>. Using this technique, you could RP one of the
+          worgs as a bit sickly, and kill off that worg as soon as it enters the
+          killable zone. The other worg you could kill off whenever it feels
+          right for combat balance. And, you could RP the bugbear as hating one
+          of the PCs, and when the bugbear enters the killable zone, you can
+          delay its death until that PC gets the killing blow.
         </p>
         <p>
-          That seems, to me, to be a little cooler than static HP values. Up to
-          you, though!
+          In closing, the Killable Zone allows for the DM to quantify the amount
+          of nonsense that can take place in the name of story without
+          sacrificing the overall feel or tension of the encounter. This allows
+          for a more flexible combat experience, and helps you to avoid those
+          awkward moments when your party's rogue kills the cleric's arch-rival.
+          It can also be used to shift the spotlight to characters or players
+          who are currently out of focus. To me, that seems a little bit cooler
+          and a lot more flavorful than static HP values.
         </p>
       </div>
     );
