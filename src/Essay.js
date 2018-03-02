@@ -228,8 +228,8 @@ class Essay extends PureComponent {
         <p>
           Obviously, there's a bit of math involved in the calculator above, and
           I want to show you how it works. After that, I want to show you one
-          application of the tool for D&amp;D that’s gotten me pretty excited—the
-          “Killable Zone”. First…
+          application of the tool for D&amp;D that’s gotten me pretty
+          excited—the “Killable Zone”. First…
         </p>
         <h2>So, how does this work anyway?</h2>
         <p>
@@ -312,7 +312,8 @@ class Essay extends PureComponent {
             <span className="expression">
               ={" "}
               <mark>
-                σ = √(<var>A</var> × (<var>X</var>² − 1)) / (2 × √(3))
+                σ = √(<var>A</var> × (<var style={{ marginRight: 2 }}>X</var>² −
+                1)) / (2 × √(3))
               </mark>
             </span>{" "}
             <span className="expression">
