@@ -92,11 +92,20 @@ a,
     "Century Schoolbook L", Georgia, serif;
   padding: 0.125em 0 0.125em 0.5em;
   width: 4em;
+  height: 1.5em;
   box-sizing: border-box;
   line-height: 1;
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 0.25em;
+}
+#calculator form select {
+  appearance: none;
+  padding-right: 1em;
+  background-image: url("./dropdownarrow.svg");
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  background-size: 1rem;
 }
 #calculator hr {
   margin: 0;
