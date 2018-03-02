@@ -115,12 +115,14 @@ const Calculator = props => {
         <Fragment>
           <ul className="levels">
             <LevelRow
-              lhs="min" eq="="
+              lhs="min"
+              eq="="
               rhs={1 + props.B}
               className="sigma-0 italic-lhs"
             />
             <LevelRow
-              lhs="max" eq="="
+              lhs="max"
+              eq="="
               rhs={props.X + props.B}
               className="sigma-0 italic-lhs"
             />
@@ -136,15 +138,32 @@ const Calculator = props => {
         <Fragment>
           <ul className="levels">
             <LevelRow
-              lhs="min" eq="="
+              lhs="min"
+              eq="="
               rhs={2 + props.B}
               className="sigma-2 italic-lhs"
             />
-            <LevelRow lhs="μ−σ" eq="≈" rhs={props.levels[1]} className="sigma-1" />
-            <LevelRow lhs="μ" eq="≈" rhs={props.levels[2]} className="sigma-0" />
-            <LevelRow lhs="μ+σ" eq="≈" rhs={props.levels[3]} className="sigma-1" />
             <LevelRow
-              lhs="max" eq="="
+              lhs="μ−σ"
+              eq="≈"
+              rhs={props.levels[1]}
+              className="sigma-1"
+            />
+            <LevelRow
+              lhs="μ"
+              eq="≈"
+              rhs={props.levels[2]}
+              className="sigma-0"
+            />
+            <LevelRow
+              lhs="μ+σ"
+              eq="≈"
+              rhs={props.levels[3]}
+              className="sigma-1"
+            />
+            <LevelRow
+              lhs="max"
+              eq="="
               rhs={props.X * 2 + props.B}
               className="sigma-2 italic-lhs"
             />
@@ -160,11 +179,36 @@ const Calculator = props => {
       levels = (
         <Fragment>
           <ul className="levels">
-            <LevelRow lhs="μ−2σ" eq="≈" rhs={props.levels[0]} className="sigma-2" />
-            <LevelRow lhs="μ−σ" eq="≈" rhs={props.levels[1]} className="sigma-1" />
-            <LevelRow lhs="μ" eq="≈" rhs={props.levels[2]} className="sigma-0" />
-            <LevelRow lhs="μ+σ" eq="≈" rhs={props.levels[3]} className="sigma-1" />
-            <LevelRow lhs="μ+2σ" eq="≈" rhs={props.levels[4]} className="sigma-2" />
+            <LevelRow
+              lhs="μ−2σ"
+              eq="≈"
+              rhs={props.levels[0]}
+              className="sigma-2"
+            />
+            <LevelRow
+              lhs="μ−σ"
+              eq="≈"
+              rhs={props.levels[1]}
+              className="sigma-1"
+            />
+            <LevelRow
+              lhs="μ"
+              eq="≈"
+              rhs={props.levels[2]}
+              className="sigma-0"
+            />
+            <LevelRow
+              lhs="μ+σ"
+              eq="≈"
+              rhs={props.levels[3]}
+              className="sigma-1"
+            />
+            <LevelRow
+              lhs="μ+2σ"
+              eq="≈"
+              rhs={props.levels[4]}
+              className="sigma-2"
+            />
           </ul>
           <ul className="nerd-stats">
             <li>μ = {props.mean}</li>
@@ -176,10 +220,10 @@ const Calculator = props => {
 
   var summaryAndAddClause;
   if (props.B > 0) {
-    summaryAndAddClause = " and add " + toWords(props.B);
+    summaryAndAddClause = ` and add ${toWords(props.B)}`;
   }
   if (props.B < 0) {
-    summaryAndAddClause = " and subtract " + toWords(Math.abs(props.B));
+    summaryAndAddClause = ` and subtract ${toWords(Math.abs(props.B))}`;
   }
 
   var summary;

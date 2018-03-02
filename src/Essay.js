@@ -317,13 +317,9 @@ class Essay extends PureComponent {
         <p>
           Now, you could{" "}
           <a
-            href={
-              "http://www.wolframalpha.com/input/?i=NormalDistribution%5B" +
-              props.mean +
-              ",+" +
-              props.stddev.toFixed(3) +
-              "%5D"
-            }
+            href={`http://www.wolframalpha.com/input/?i=NormalDistribution%5B${
+              props.mean
+            },+${props.stddev.toFixed(3)}%5D`}
           >
             put the mean and standard deviation into Wolfram|Alpha to get the
             normal distribution
