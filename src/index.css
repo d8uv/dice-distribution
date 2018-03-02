@@ -21,7 +21,7 @@ body {
 h1 {
   font-size: 2.25rem;
   line-height: 1;
-  margin: 1em 0;
+  margin: 2.25rem 0 0;
 }
 h1 svg {
   vertical-align: bottom;
@@ -33,6 +33,16 @@ h1 svg.u1f660 {
 }
 h1 svg.u1f662 {
   margin-left: 0.333333em;
+}
+
+p.tagline,
+p.calculator-summary {
+  font-size: 1.6875rem;
+  line-height: 2.25rem;
+  margin: 0 0 2.25rem;
+}
+p.tagline {
+  font-style: italic;
 }
 
 a,
@@ -134,9 +144,9 @@ a,
   list-style: none;
 }
 p.calculator-summary {
-  font-size: 1.6875rem;
-  line-height: 2.25rem;
-  margin: 2.25rem 0 3.375rem;
+  margin: 2.25rem 0 1.125rem;
+  padding-bottom: 2.25rem;
+  border-bottom: 1px solid #ccc;
 }
 p.calculator-summary .tooltip {
   font-style: italic;

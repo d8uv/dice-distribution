@@ -13,9 +13,12 @@ const u1f662 = (
 );
 
 const Header = props => (
-  <h1>
-    {u1f660}Dice to Distribution{u1f662}
-  </h1>
+  <header>
+    <h1>
+      {u1f660}Dice to Distribution{u1f662}
+    </h1>
+    <p className="tagline">and the Killable Zone</p>
+  </header>
 );
 
 export default Header;
