@@ -228,10 +228,10 @@ class Essay extends PureComponent {
         <p>
           Obviously, there's a bit of math involved in the calculator above, and
           I want to show you how it works. After that, I want to show you one
-          application of the tool for D&D that’s gotten me pretty excited—the
+          application of the tool for D&amp;D that’s gotten me pretty excited—the
           “Killable Zone”. First…
         </p>
-        <h2>Finding ranges of likely rolls using the Normal Distribution</h2>
+        <h2>So, how does this work anyway?</h2>
         <p>
           When you roll multiple dice at a time, some results are more common
           than others. For example, with 3d6, there’s only one way to get a 3,
