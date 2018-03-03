@@ -223,10 +223,16 @@ class Essay extends PureComponent {
         );
     }
 
+    const currentDiceFormula = (
+      <span>
+        {props.A}d{props.X} {props.B < 0 ? "−" : "+"} {Math.abs(props.B)}
+      </span>
+    );
+
     return (
       <div id="essay">
         <p>
-          Obviously, there's a bit of math involved in the calculator above, and
+          Obviously, there’s a bit of math involved in the calculator above, and
           I want to show you how it works. After that, I want to show you one
           application of the tool for D&amp;D that’s gotten me pretty
           excited—the “Killable Zone”. First…
@@ -260,10 +266,7 @@ class Essay extends PureComponent {
           <mark>
             <var>A</var> = {props.A}, <var>X</var> = {props.X}, and <var>B</var>{" "}
             = {props.B}
-          </mark>, or{" "}
-          <mark>
-            {props.A}d{props.X} {props.B < 0 ? "−" : "+"} {Math.abs(props.B)}
-          </mark>.
+          </mark>, or <mark>{currentDiceFormula}</mark>.
         </p>
         <h3>Finding the Normal Distribution</h3>
         <p>
@@ -360,10 +363,9 @@ class Essay extends PureComponent {
         </p>
         <p>
           As you can see, it’s really easy to construct ranges of likely values
-          using this method. If you’re rolling {props.A}d{props.X}{" "}
-          {props.B < 0 ? "−" : "+"} {Math.abs(props.B)}, the most common result
-          will be around {props.mean}. About 2 out of 3 rolls will take place
-          between {(props.mean - props.stddev).toFixed(2)} and{" "}
+          using this method. If you’re rolling {currentDiceFormula}, the most
+          common result will be around {props.mean}. About 2 out of 3 rolls will
+          take place between {(props.mean - props.stddev).toFixed(2)} and{" "}
           {(props.mean + props.stddev).toFixed(2)}. Only about 1 in 22 rolls
           will take place outside of{" "}
           {(props.mean - 2 * props.stddev).toFixed(2)} and{" "}
@@ -413,18 +415,12 @@ class Essay extends PureComponent {
           this.
         </p>
         <p>
-          Consider the{" "}
-          <ChangeStatBlockLink value="bugbear" onClick={this.changeStatblock}>
-            Bugbear
-          </ChangeStatBlockLink>, a creature which has{" "}
-          <ChangeDiceFormulaLink
-            A="5"
-            X="8"
-            B="5"
-            onClick={props.changeDiceFormula}
-          />{" "}
-          HP. Using the above tool, we can see that μ−σ ≈ 22, and μ+σ ≈ 33. So,
-          we define the killing zone of the bugbear as 22 – 33.
+          The killable zone is defined as μ−σ – μ+σ.{" "}
+          <mark>
+            If your creature has your creature has {currentDiceFormula} HP, the
+            killable zone would be {props.levels[1]} – {props.levels[3]}
+          </mark>. If your creature takes enough damage to enter the killable
+          zone, you can kill it.
         </p>
         <p>
           This allows you, as the DM, to easily adjust combat encounters on the
@@ -457,7 +453,7 @@ class Essay extends PureComponent {
           of nonsense that can take place in the name of story without
           sacrificing the overall feel or tension of the encounter. This allows
           for a more flexible combat experience, and helps you to avoid those
-          awkward moments when your party's rogue kills the cleric's arch-rival.
+          awkward moments when your party’s rogue kills the cleric’s arch-rival.
           It can also be used to shift the spotlight to characters or players
           who are currently out of focus. To me, that seems a little bit cooler
           and a lot more flavorful than static HP values.
