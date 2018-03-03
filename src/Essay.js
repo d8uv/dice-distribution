@@ -415,7 +415,7 @@ class Essay extends PureComponent {
           this.
         </p>
         <p>
-          The killable zone is defined as μ−σ – μ+σ.{" "}
+          The killable zone is defined as (μ−σ) – (μ+σ).{" "}
           <mark>
             If your creature has your creature has {currentDiceFormula} HP, the
             killable zone would be {props.levels[1]} – {props.levels[3]}
