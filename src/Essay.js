@@ -411,16 +411,26 @@ class Essay extends PureComponent {
         <p>
           In stat blocks, hit points are shown as a number, and a dice formula.
           Most DMs just treat that number as “that’s how many hit points that
-          monster has”, but there’s a more flexible and interesting way to do
+          creature has”, but there’s a more flexible and interesting way to do
           this.
         </p>
         <p>
-          The killable zone is defined as (μ−σ) – (μ+σ).{" "}
+          The killable zone is defined as{" "}
+          <span className="nobr">(μ−σ) – (μ+σ)</span>.<br />
           <mark>
-            If your creature has your creature has {currentDiceFormula} HP, the
-            killable zone would be {props.levels[1]} – {props.levels[3]}
-          </mark>. If your creature takes enough damage to enter the killable
-          zone, you can kill it.
+            If your creature has {currentDiceFormula} HP, the killable zone
+            would be{" "}
+            <span className="nobr">
+              {props.levels[1]} – {props.levels[3]}
+            </span>
+          </mark>. Instead of a single static number that corresponds to the
+          creature’s HP, it’s a <em>range</em> of likely HP values.
+        </p>
+        <p>
+          Once your creature takes {props.levels[1]} points of damage, it’s
+          likely on death’s door, and can die. Most creatures have around{" "}
+          {props.levels[2]} HP. The sturdiest of creatures can take up to{" "}
+          {props.levels[3]} points of damage before dying.
         </p>
         <p>
           This allows you, as the DM, to easily adjust combat encounters on the
@@ -430,8 +440,8 @@ class Essay extends PureComponent {
         </p>
         <p>
           There’s a bunch of other things you can do with this, such as time
-          when your monsters die for the best dramatic impact, or make a
-          weaker-than-normal monster (or stronger) for RP reasons.
+          when your creatures die for the best dramatic impact, or make a
+          weaker-than-normal creature (or stronger) for RP reasons.
         </p>
         <p>
           For example, let’s say you have an encounter with two{" "}
