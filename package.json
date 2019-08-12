@@ -7,6 +7,7 @@
   "license": "CC-BY-4.0",
   "author": "d8uv <d8uv@d8uv.org> (http://www.d8uv.org/)",
   "dependencies": {
+    "npm": "^5.7.1",
     "number-to-words": "^1.2.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
