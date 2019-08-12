@@ -53,10 +53,6 @@ class Essay extends PureComponent {
                 B="4"
                 onClick={props.changeDiceFormula}
               />)<br />
-              <mark className="killable-zone">
-                <b>Killable Zone:</b> 20 – 32
-              </mark>
-              <br />
               <b>Speed:</b> 50 ft.
             </p>
             <h4 className="visuallyhidden">Ability Scores</h4>
@@ -101,6 +97,11 @@ class Essay extends PureComponent {
             </p>
             <h4 className="visuallyhidden">Traits</h4>
             <p>
+              <mark className="killable-zone">
+                <b>Killable Zone:</b> The worg has between 20 and 32 hit points.
+              </mark>
+            </p>
+            <p>
               <b>Keen Hearing and Smell.</b> The worg has advantage on Wisdom
               (Perception) checks that rely on hearing or smell.
             </p>
@@ -137,10 +138,6 @@ class Essay extends PureComponent {
                 B="5"
                 onClick={props.changeDiceFormula}
               />)<br />
-              <mark className="killable-zone">
-                <b>Killable Zone:</b> 22 – 33
-              </mark>
-              <br />
               <b>Speed:</b> 30 ft.
             </p>
             <h4 className="visuallyhidden">Ability Scores</h4>
@@ -185,13 +182,23 @@ class Essay extends PureComponent {
             </p>
             <h4 className="visuallyhidden">Traits</h4>
             <p>
+              <mark className="killable-zone">
+                <b>Killable Zone:</b> The bugbear has between 22 and 33 hit points.
+              </mark>
+            </p>
+            <p>
               <b>Brute.</b> A melee weapon deals one extra die of its damage
               when the bugbear hits with it (included in the attack).
             </p>
             <p>
               <b>Surprise Attack.</b> If the bugbear surprises a creature and
               hits it with an attack during the first round of combat, the
-              target takes an extra 7 (2d6) damage from the attack.
+              target takes an extra 7 (<ChangeDiceFormulaLink
+                A="2"
+                X="6"
+                B="0"
+                onClick={props.changeDiceFormula}
+              />) damage from the attack.
             </p>
             <h4 className="actions">
               <span className="visuallyhidden">Actions</span>

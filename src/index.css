@@ -189,6 +189,7 @@ p.calculator-summary .tooltip {
 #essay mark {
   background-color: #f5ef96;
   padding: 0 0.166667em;
+  box-decoration-break: clone;
 }
 #essay .formula {
   text-align: center;
