@@ -9,7 +9,7 @@ const ChangeDiceFormulaLink = props => (
     data-b={props.B}
     onClick={props.onClick}
   >
-    {props.A}d{props.X} + {props.B}
+    {props.A}d{props.X} {props.B === "0" ? "" : `+ ${props.B}`}
   </button>
 );
 const ChangeStatBlockLink = props => (
