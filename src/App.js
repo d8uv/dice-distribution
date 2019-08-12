@@ -10,7 +10,7 @@ const getDiceLevel = (mean, stddev, level) => Math.round(mean + stddev * level);
 class App extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = { A: 3, X: 8, B: 0 };
+    this.state = { A: 3, X: 10, B: 0 };
   }
   changeA = event => this.setState({ A: parseInt(event.target.value, 10) });
   changeX = event => this.setState({ X: parseInt(event.target.value, 10) });
