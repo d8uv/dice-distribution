@@ -1,12 +1,12 @@
 # "Dice to Distribution" source code
 
-This repository holds the http://www.d8uv.org/dice-to-distribution/source code for my [Dice to Distribution](http://www.d8uv.org/dice-to-distribution/) essay.
+This repository holds the source code for my [Dice to Distribution](http://www.d8uv.org/dice-to-distribution/) essay.
 
 I'm putting this up more as a backup for me, I doubt anyone will ever care. In case you do care, feel free to give pull requests. This is a personal project for a fancy essay, I tried to do most things properly, but I didn't care to do absolutely everything properly.
 
 ---
 
-© 2018 [d8uv](http://www.d8uv.org/), licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+© 2019 [d8uv](http://www.d8uv.org/), licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
 “Bugbear” and “Worg” statblocks are courtesy of the [System Reference Document 5.1](http://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf), © 2016 Wizards of the Coast, licensed under the Open Gaming License 1.0a. Plz no sue.
 
 ---
