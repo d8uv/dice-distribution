@@ -6,9 +6,19 @@ class NumberInput extends PureComponent {
     super(props);
     this.state = { value: "" + this.props.value };
   }
-  componentWillReceiveProps(nextprops) {
-    this.setState({ value: "" + nextprops.value });
+
+  static getDerivedStateFromProps(props, state) {
+    // Any time the current user changes,
+    // Reset any parts of state that are tied to that user.
+    // In this simple example, that's just the email.
+    if (props.value !== state.value) {
+      return {
+        value: props.value
+      };
+    }
+    return null;
   }
+
   handleChange = event => {
     const value = event.target.value;
     this.setState({ value: value });
@@ -233,8 +243,8 @@ const Calculator = props => {
     case 2:
       summary = (
         <p className="calculator-summary">
-          When you roll {toWords(props.A)} {toWords(props.X).replace(" ", "-")}-sided
-          die{summaryAndAddClause}, the result will{" "}
+          When you roll {toWords(props.A)} {toWords(props.X).replace(" ", "-")}
+          -sided die{summaryAndAddClause}, the result will{" "}
           <span className="tooltip" title="68%">
             likely
           </span>{" "}
@@ -246,8 +256,8 @@ const Calculator = props => {
     default:
       summary = (
         <p className="calculator-summary">
-          When you roll {toWords(props.A)} {toWords(props.X).replace(" ", "-")}-sided
-          die{summaryAndAddClause}, the result will{" "}
+          When you roll {toWords(props.A)} {toWords(props.X).replace(" ", "-")}
+          -sided die{summaryAndAddClause}, the result will{" "}
           <span className="tooltip" title="68%">
             likely
           </span>{" "}
