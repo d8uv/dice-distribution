@@ -197,7 +197,8 @@ p.calculator-summary .tooltip {
   border-width: 1px 0;
   margin-bottom: 1.125rem;
 }
-#essay .formula .expression {
+#essay .formula .expression,
+#essay .formula .expression mark {
   display: inline-block;
 }
 #essay button.changeStateFauxLink {
